@@ -27,11 +27,11 @@ export default function Home() {
   useEffect(() => {
     console.log('🚀 Home component mounted - calling loadData()');
     loadData();
-    // Refresh every 15 minutes
+    // Refresh every 5 minutes for fresh news
     const interval = setInterval(() => {
       console.log('🔄 Auto-refresh interval triggered');
       loadData();
-    }, 15 * 60 * 1000);
+    }, 5 * 60 * 1000);
     return () => clearInterval(interval);
   }, []);
 

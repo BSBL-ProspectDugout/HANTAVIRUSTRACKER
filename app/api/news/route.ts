@@ -40,5 +40,4 @@ export async function GET(request: NextRequest) {
   }
 }
 
-export const revalidate = 3600; // Revalidate every hour
-// Force rebuild - API key environment variable test
+export const revalidate = 600; // Revalidate every 10 minutes for fresh news

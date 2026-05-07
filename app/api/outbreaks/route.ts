@@ -30,4 +30,4 @@ export async function GET() {
   }
 }
 
-export const revalidate = 3600; // Revalidate every hour
+export const revalidate = 600; // Revalidate every 10 minutes for fresh data
