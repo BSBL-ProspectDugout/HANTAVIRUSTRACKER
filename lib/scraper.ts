@@ -88,7 +88,7 @@ async function fetchFromCDC(): Promise<Outbreak[]> {
  */
 async function fetchFromNewsAPI(): Promise<NewsArticle[]> {
   // Temporarily hardcode API key to test if environment variable is the issue
-  const apiKey = '5a7a7d9ae92f4e8f81889377c73dab1d' || process.env.NEXT_PUBLIC_NEWS_API_KEY;
+  const apiKey = '5a7a7d9ae92f4e8f81889377c73dab1d';
 
   try {
     if (!apiKey) {
