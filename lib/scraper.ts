@@ -87,17 +87,15 @@ async function fetchFromCDC(): Promise<Outbreak[]> {
  * Fetch news articles about hantavirus from multiple sources
  */
 async function fetchFromNewsAPI(): Promise<NewsArticle[]> {
-  const apiKey = process.env.NEXT_PUBLIC_NEWS_API_KEY;
+  // Temporarily hardcode API key to test if environment variable is the issue
+  const apiKey = '5a7a7d9ae92f4e8f81889377c73dab1d' || process.env.NEXT_PUBLIC_NEWS_API_KEY;
 
   try {
     if (!apiKey) {
-      console.warn('NewsAPI key not configured', {
-        env: process.env.NEXT_PUBLIC_NEWS_API_KEY,
-        allEnv: Object.keys(process.env).filter(k => k.includes('NEWS'))
-      });
+      console.warn('NewsAPI key not configured');
       return [];
     }
-    console.log('NewsAPI key loaded successfully');
+    console.log('✓ Using NewsAPI key');
 
     const queries = [
       'hantavirus outbreak',
