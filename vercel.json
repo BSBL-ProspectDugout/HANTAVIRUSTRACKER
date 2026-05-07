@@ -1,5 +1,4 @@
 {
   "buildCommand": "next build",
-  "framework": "nextjs",
-  "rootDirectory": "hantavirus-tracker"
+  "framework": "nextjs"
 }
