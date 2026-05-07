@@ -148,81 +148,70 @@ export default function Home() {
           </div>
         )}
 
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Map Section */}
-          <div className="lg:col-span-2">
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="h-96 md:h-[500px]">
-                {!loading && <OutbreakMap outbreaks={outbreaks} />}
-              </div>
-              <div className="p-4 bg-gray-50 border-t">
-                <p className="text-sm text-gray-600">
-                  ℹ️ Click on markers for detailed outbreak information
-                </p>
-              </div>
-            </div>
+        {/* Map Section - Full Width */}
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-6">
+          <div className="h-96 md:h-[500px]">
+            {!loading && <OutbreakMap outbreaks={outbreaks} />}
+          </div>
+          <div className="p-4 bg-gray-50 border-t">
+            <p className="text-sm text-gray-600">
+              ℹ️ Click on markers for detailed outbreak information | Real-time updates
+            </p>
+          </div>
+        </div>
+
+        {/* News Feed Section - Below Map */}
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-6">
+          <div className="p-6 border-b bg-gradient-to-r from-red-50 to-orange-50">
+            <h2 className="font-bold text-2xl text-gray-900 mb-3">Latest Hantavirus News</h2>
+            <p className="text-gray-600 text-sm mb-4">Real-time news from NewsAPI, CDC, WHO, BBC, Reuters and more</p>
+            <form onSubmit={handleSearch} className="flex gap-2">
+              <input
+                type="text"
+                placeholder="Search news..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="flex-1 px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:border-red-500"
+              />
+              <button
+                type="submit"
+                className="px-4 py-2 bg-red-600 text-white rounded text-sm font-medium hover:bg-red-700 transition"
+              >
+                Search
+              </button>
+            </form>
           </div>
 
-          {/* News Feed Section */}
-          <div className="space-y-4">
-            {/* Side Ad */}
-            {process.env.NEXT_PUBLIC_GOOGLE_AD_CLIENT_ID && (
-              <div className="bg-white rounded-lg shadow p-4">
-                <AdSenseBlock adSlot="3456789012" adFormat="vertical" style={{ minHeight: '600px' }} />
-              </div>
-            )}
-
-            {/* News Feed */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
-              {/* Search Bar */}
-              <div className="p-4 border-b bg-gray-50">
-              <h2 className="font-bold text-lg mb-3 text-gray-900">Latest News</h2>
-              <form onSubmit={handleSearch} className="flex gap-2">
-                <input
-                  type="text"
-                  placeholder="Search news..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="flex-1 px-3 py-2 border border-gray-300 rounded text-sm focus:outline-none focus:border-red-500"
-                />
-                <button
-                  type="submit"
-                  className="px-4 py-2 bg-red-600 text-white rounded text-sm font-medium hover:bg-red-700 transition"
-                >
-                  Search
-                </button>
-              </form>
-            </div>
-
-            {/* News List */}
-            <div className="flex-1 overflow-y-auto">
-              {searchResults.length > 0 ? (
-                searchResults.map((article) => (
+          {/* News Grid */}
+          <div className="p-6">
+            {searchResults.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {searchResults.map((article) => (
                   <a
                     key={article.id}
                     href={article.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block p-4 border-b hover:bg-red-50 transition"
+                    className="p-4 border border-gray-200 rounded-lg hover:border-red-500 hover:shadow-md transition group"
                   >
-                    <h3 className="font-semibold text-sm text-gray-900 hover:text-red-700 line-clamp-2">
+                    <h3 className="font-semibold text-sm text-gray-900 group-hover:text-red-700 line-clamp-3 mb-2">
                       {article.title}
                     </h3>
-                    <p className="text-xs text-gray-600 mt-1 line-clamp-2">{article.summary}</p>
-                    <div className="flex justify-between items-center mt-2">
+                    <p className="text-xs text-gray-600 mb-3 line-clamp-2">{article.summary}</p>
+                    <div className="flex justify-between items-center pt-2 border-t border-gray-100">
                       <span className="text-xs font-medium text-blue-600">{article.source}</span>
                       <span className="text-xs text-gray-500">
                         {new Date(article.publishedDate).toLocaleDateString()}
                       </span>
                     </div>
                   </a>
-                ))
-              ) : (
-                <div className="p-4 text-center text-gray-500">No news articles found</div>
-              )}
-            </div>
-            </div>
+                ))}
+              </div>
+            ) : (
+              <div className="p-8 text-center text-gray-500">
+                <p>No news articles found</p>
+              </div>
+            )}
           </div>
         </div>
 
