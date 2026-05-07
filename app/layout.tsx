@@ -67,12 +67,12 @@ export default function RootLayout({
           />
         )}
 
-        {/* Google Analytics (optional) */}
-        {process.env.NEXT_PUBLIC_GA_ID && (
+        {/* Google Analytics */}
+        {(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || process.env.NEXT_PUBLIC_GA_ID) && (
           <>
             <Script
               async
-              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || process.env.NEXT_PUBLIC_GA_ID}`}
               strategy="afterInteractive"
             />
             <Script
@@ -83,7 +83,11 @@ export default function RootLayout({
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
-                  gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+                  gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || process.env.NEXT_PUBLIC_GA_ID}', {
+                    anonymize_ip: true,
+                    allow_google_signals: true,
+                    allow_ad_personalization: true,
+                  });
                 `,
               }}
             />
