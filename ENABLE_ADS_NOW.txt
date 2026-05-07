@@ -1,0 +1,121 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                   ENABLE ADS ON YOUR WEBSITE - QUICK START                     ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+⏱️  TAKES 5 MINUTES
+
+STEP 1: Sign Up for Google AdSense
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Open: https://www.google.com/adsense/
+2. Click "Sign up now"
+3. Log in with Google account
+4. Enter your domain: hantavirusnews.com (or hantanews.com)
+5. Click "Get started"
+
+⏰ Time: 1 minute
+
+
+STEP 2: Get Your Publisher ID
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+After signup, look for Publisher ID:
+1. Go to Settings → Account → Account information
+2. Find "Publisher ID" (example: ca-pub-0000000000000000)
+3. Copy ONLY the number part: 0000000000000000
+
+⏰ Time: 1 minute
+
+
+STEP 3: Add Environment Variable
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+In hantavirus-tracker/ folder, create/edit .env.local:
+
+  NEXT_PUBLIC_GOOGLE_AD_CLIENT_ID=0000000000000000
+
+Replace "0000000000000000" with YOUR publisher ID (just the numbers).
+
+⏰ Time: 1 minute
+
+
+STEP 4: Rebuild App
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Run in terminal:
+  npm run build
+  npm run dev
+
+App will start on http://localhost:3003
+
+⏰ Time: 1 minute
+
+
+STEP 5: Deploy
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Option A - Vercel (Recommended):
+  git add .env.local
+  git commit -m "Enable Google AdSense"
+  git push origin main
+  # Vercel auto-redeploys
+
+Option B - Traditional Server:
+  npm run build
+  npm start
+  # Deploy built app to your server
+
+⏰ Time: 1 minute
+
+
+STEP 6: Wait for Google Approval
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- Check your email (usually 1-7 days)
+- Once approved, ads appear automatically
+- You start earning money!
+
+⏰ Time: 1-7 days
+
+
+💰 EARNINGS EXPECTATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- 100 daily visitors   = $10-50/month
+- 1,000 daily visitors = $100-500/month
+- 10,000 daily visitors = $1,000+/month
+
+Ads are already placed on your site in 5 locations:
+1. Top banner (under header)
+2. After statistics cards
+3. Sidebar (next to news)
+4. Before outbreak table
+5. Before footer
+
+
+📊 AD DETAILS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Component Created: AdSenseBlock.tsx
+Locations: 5 ad placements on homepage
+Formats: Horizontal, vertical, auto-responsive
+Already Integrated: Layout, page, all components ready
+
+
+🚀 YOU'RE DONE!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ Code is ready
+✅ AdSense component added
+✅ 5 ad placements configured
+✅ Just need environment variable + approval
+
+
+NEXT STEPS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Add .env.local (1 minute)
+2. Deploy (1 minute)
+3. Wait for approval (1-7 days)
+4. Start earning! 🎉
+
+
+📚 MORE INFO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- Full guide: Read ADSENSE_SETUP.md
+- Other options: Read MONETIZATION.md
+- Summary: Read ADS_SUMMARY.md
+
+
+Questions? Check the documentation files or visit:
+https://support.google.com/adsense/

@@ -109,6 +109,7 @@ async function fetchFromNewsAPI(): Promise<NewsArticle[]> {
 
     for (const query of queries) {
       try {
+        console.log(`📰 Fetching news for query: "${query}"`);
         const response = await axios.get('https://newsapi.org/v2/everything', {
           params: {
             q: query,
@@ -119,6 +120,10 @@ async function fetchFromNewsAPI(): Promise<NewsArticle[]> {
           },
           timeout: 5000,
         });
+
+        console.log(`📰 Response status for "${query}":`, response.status);
+        console.log(`📰 Response has articles?:`, !!response.data.articles);
+        console.log(`📰 Article count for "${query}":`, response.data.articles?.length || 0);
 
         if (response.data.articles) {
           const articles = response.data.articles.map((article: any, idx: number) => ({
@@ -132,11 +137,14 @@ async function fetchFromNewsAPI(): Promise<NewsArticle[]> {
           }));
 
           allArticles.push(...articles);
+          console.log(`📰 Added ${articles.length} articles from "${query}". Total now: ${allArticles.length}`);
         }
       } catch (err) {
-        console.error(`Error fetching news for query "${query}":`, err);
+        console.error(`❌ Error fetching news for query "${query}":`, err instanceof Error ? err.message : err);
       }
     }
+
+    console.log(`📰 Total articles collected: ${allArticles.length}`);
 
     // Remove duplicates and sort by date
     const uniqueArticles = Array.from(
@@ -146,6 +154,7 @@ async function fetchFromNewsAPI(): Promise<NewsArticle[]> {
       new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime()
     );
 
+    console.log(`📰 Returning ${uniqueArticles.slice(0, 20).length} unique articles`);
     return uniqueArticles.slice(0, 20);
   } catch (error) {
     console.error('Error fetching news from NewsAPI:', error);
@@ -200,6 +209,7 @@ export async function fetchOutbreakData(): Promise<Outbreak[]> {
  */
 export async function fetchNewsData(): Promise<NewsArticle[]> {
   try {
+    console.log('🔍 fetchNewsData() called');
     const [newsAPIData, googleNewsData] = await Promise.allSettled([
       fetchFromNewsAPI(),
       fetchFromGoogleNewsRSS(),
@@ -207,16 +217,24 @@ export async function fetchNewsData(): Promise<NewsArticle[]> {
 
     const allNews: NewsArticle[] = [];
 
-    if (newsAPIData.status === 'fulfilled' && newsAPIData.value.length > 0) {
-      allNews.push(...newsAPIData.value);
+    console.log('🔍 NewsAPI status:', newsAPIData.status);
+    if (newsAPIData.status === 'fulfilled') {
+      console.log('🔍 NewsAPI returned', newsAPIData.value.length, 'articles');
+      if (newsAPIData.value.length > 0) {
+        allNews.push(...newsAPIData.value);
+      }
     }
 
+    console.log('🔍 GoogleNews status:', googleNewsData.status);
     if (googleNewsData.status === 'fulfilled' && googleNewsData.value.length > 0) {
       allNews.push(...googleNewsData.value);
     }
 
+    console.log('🔍 Total real articles collected:', allNews.length);
+
     // If no real data, return sample
     if (allNews.length === 0) {
+      console.warn('⚠️  No real data found - returning SAMPLE_NEWS');
       return SAMPLE_NEWS;
     }
 
@@ -228,9 +246,10 @@ export async function fetchNewsData(): Promise<NewsArticle[]> {
       new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime()
     );
 
+    console.log('✅ Returning', uniqueNews.slice(0, 25).length, 'real articles');
     return uniqueNews.slice(0, 25);
   } catch (error) {
-    console.error('Error in fetchNewsData:', error);
+    console.error('❌ Error in fetchNewsData:', error);
     return SAMPLE_NEWS;
   }
 }
