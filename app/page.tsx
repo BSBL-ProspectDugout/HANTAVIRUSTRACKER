@@ -25,9 +25,13 @@ export default function Home() {
   const [currentTime, setCurrentTime] = useState<string>('');
 
   useEffect(() => {
+    console.log('🚀 Home component mounted - calling loadData()');
     loadData();
     // Refresh every 15 minutes
-    const interval = setInterval(loadData, 15 * 60 * 1000);
+    const interval = setInterval(() => {
+      console.log('🔄 Auto-refresh interval triggered');
+      loadData();
+    }, 15 * 60 * 1000);
     return () => clearInterval(interval);
   }, []);
 
@@ -37,26 +41,38 @@ export default function Home() {
 
   async function loadData() {
     try {
+      console.log('📡 loadData() - Fetching from APIs...');
       setLoading(true);
       const [outbreaksRes, newsRes] = await Promise.all([
-        fetch('/api/outbreaks'),
-        fetch('/api/news'),
+        fetch('/api/outbreaks?t=' + Date.now()),
+        fetch('/api/news?t=' + Date.now()),
       ]);
+
+      console.log('📡 Outbreaks response status:', outbreaksRes.status);
+      console.log('📡 News response status:', newsRes.status);
 
       const outbreaksData = (await outbreaksRes.json()) as ApiResponse<any>;
       const newsData = (await newsRes.json()) as ApiResponse<any>;
 
+      console.log('📡 Outbreaks data success:', outbreaksData.success, 'Count:', outbreaksData.data?.outbreaks?.length);
+      console.log('📡 News data success:', newsData.success, 'Count:', newsData.data?.articles?.length);
+
       if (outbreaksData.success) {
+        console.log('✅ Setting outbreaks:', outbreaksData.data.outbreaks.length);
         setOutbreaks(outbreaksData.data.outbreaks);
         setStats(outbreaksData.data.stats);
       }
 
       if (newsData.success) {
+        console.log('✅ Setting news articles:', newsData.data.articles.length);
+        console.log('📰 First article:', newsData.data.articles[0]?.title);
         setNews(newsData.data.articles);
         setSearchResults(newsData.data.articles);
       }
+
+      console.log('✅ loadData() completed successfully');
     } catch (error) {
-      console.error('Failed to load data:', error);
+      console.error('❌ Failed to load data:', error);
     } finally {
       setLoading(false);
     }
