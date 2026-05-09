@@ -190,18 +190,17 @@ export async function POST(request: NextRequest) {
     console.log('📊 Manual refresh triggered');
     const outbreakData = await fetchRealTimeOutbreakData();
 
-    const dataFile = path.join(process.cwd(), 'public', 'outbreak-data.json');
-    fs.writeFileSync(dataFile, JSON.stringify(outbreakData, null, 2));
-
     return NextResponse.json(
       {
         success: true,
-        message: 'Outbreak data manually refreshed',
+        message: 'Outbreak data refreshed',
         data: outbreakData,
+        timestamp: new Date().toISOString(),
       },
       { status: 200 }
     );
   } catch (error) {
+    console.error('❌ Error refreshing outbreak data:', error);
     return NextResponse.json(
       {
         success: false,
