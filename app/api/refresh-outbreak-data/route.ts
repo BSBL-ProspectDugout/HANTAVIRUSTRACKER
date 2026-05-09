@@ -1,35 +1,24 @@
 import { NextResponse, NextRequest } from 'next/server';
-import fs from 'fs';
-import path from 'path';
 
 /**
  * GET /api/refresh-outbreak-data
  *
  * Cron job that runs every 15 minutes to fetch fresh outbreak data
- * Updates map with real-time case counts, deaths, and geographic spread
  *
  * Triggered by: Vercel cron every 15 minutes
  */
 
 export async function GET(request: NextRequest) {
   try {
-    // Verify this is a Vercel cron request
-    const authHeader = request.headers.get('authorization');
-    const cronHeader = request.headers.get('x-vercel-cron');
-
     console.log('📊 Starting real-time outbreak data refresh...');
 
-    // Fetch fresh outbreak data from multiple sources
+    // Fetch fresh outbreak data
     const outbreakData = await fetchRealTimeOutbreakData();
 
-    // Save to file for API to serve
-    const dataFile = path.join(process.cwd(), 'public', 'outbreak-data.json');
-    fs.writeFileSync(dataFile, JSON.stringify(outbreakData, null, 2));
-
-    console.log('✅ Outbreak data updated successfully');
-    console.log(`   Total cases: ${outbreakData.globalStats.totalCases}`);
-    console.log(`   Total deaths: ${outbreakData.globalStats.totalDeaths}`);
-    console.log(`   Active outbreaks: ${outbreakData.globalStats.activeOutbreaks}`);
+    console.log('✅ Outbreak data refreshed');
+    console.log(`   Total cases: ${outbreakData.globalStatistics.totalConfirmedCases}`);
+    console.log(`   Total deaths: ${outbreakData.globalStatistics.totalConfirmedDeaths}`);
+    console.log(`   Active outbreaks: ${outbreakData.globalStatistics.activeOutbreaks}`);
 
     return NextResponse.json(
       {
@@ -54,7 +43,7 @@ export async function GET(request: NextRequest) {
 }
 
 /**
- * Fetch real-time outbreak data from CDC, WHO, and news sources
+ * Fetch real-time outbreak data
  */
 async function fetchRealTimeOutbreakData() {
   const outbreaks = [];
