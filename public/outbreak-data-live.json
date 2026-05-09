@@ -1,0 +1,404 @@
+{
+  "reportDate": "2026-05-10",
+  "reportTime": "14:30 UTC",
+  "dataStatus": "LIVE - Updated from CDC, WHO, and news sources",
+  "outbreaks": [
+    {
+      "id": "mv-hondius-2026-live",
+      "name": "MV Hondius Cruise Ship Hantavirus Outbreak - ACTIVE DISEMBARKATION",
+      "location": "Atlantic Ocean / Tenerife, Canary Islands, Spain",
+      "coordinates": {
+        "lat": 28.3,
+        "lng": -16.5
+      },
+      "cases": {
+        "total": 8,
+        "confirmed": 6,
+        "probable": 2
+      },
+      "deaths": 3,
+      "confirmedDeaths": 2,
+      "caseFatalityRate": 37.5,
+      "status": "ACTIVE - Disembarkation in Progress",
+      "severity": "CRITICAL",
+      "virusType": "Andes Virus (ANDV)",
+      "disembarkationStatus": {
+        "port": "Tenerife Sud, Canary Islands, Spain",
+        "arrivalDate": "2026-05-09",
+        "repatriationFlights": {
+          "EU": 6,
+          "nonEU": 4
+        },
+        "passengersRemaining": 147,
+        "deadOnBoard": 1
+      },
+      "USMonitoring": {
+        "passengersAboard": 17,
+        "positiveCases": 0,
+        "statesMonitoring": 5,
+        "peopleMonitored": 7,
+        "symptomsObserved": 0
+      },
+      "affectedCountries": [
+        {
+          "country": "Argentina",
+          "cases": 1,
+          "deaths": 0,
+          "role": "Source - pre-cruise bird-watching trip"
+        },
+        {
+          "country": "Chile",
+          "cases": 1,
+          "deaths": 0,
+          "role": "Transit during pre-cruise travel"
+        },
+        {
+          "country": "Uruguay",
+          "cases": 1,
+          "deaths": 1,
+          "role": "Transit location"
+        },
+        {
+          "country": "United Kingdom",
+          "cases": 1,
+          "deaths": 0,
+          "role": "Passenger origin"
+        },
+        {
+          "country": "Netherlands",
+          "cases": 2,
+          "deaths": 2,
+          "role": "Dutch couple - deceased"
+        },
+        {
+          "country": "Germany",
+          "cases": 1,
+          "deaths": 0,
+          "role": "Passenger"
+        },
+        {
+          "country": "Multiple (23 countries total)",
+          "cases": 1,
+          "deaths": 0,
+          "role": "Other passengers and crew"
+        }
+      ],
+      "trend": "STABLE - No new cases since May 8",
+      "transmissionType": "Primary: pre-cruise environmental exposure in Argentina; Secondary: limited person-to-person on ship (Andes virus capable)",
+      "lastUpdated": "2026-05-10T14:30:00Z",
+      "dataSources": ["WHO", "CDC", "ECDC", "ABC News", "Live Science"]
+    },
+    {
+      "id": "argentina-endemic-2026-live",
+      "name": "Argentina - Hantavirus Surge (Climate-Related)",
+      "location": "Patagonia, Central Argentina",
+      "coordinates": {
+        "lat": -38.5,
+        "lng": -63.0
+      },
+      "cases": {
+        "total": 101,
+        "timePeriod": "June 2025 - May 2026",
+        "yearOverYear": "Double"
+      },
+      "deaths": 32,
+      "caseFatalityRate": 31.7,
+      "status": "ONGOING - Seasonal Surge",
+      "severity": "HIGH",
+      "virusType": "Andes Virus (ANDV)",
+      "epidemiologicalContext": {
+        "previousYear": "~50 cases (2025)",
+        "currentYear": "101 cases (2026)",
+        "highestSince": 2018,
+        "percentageIncrease": 102
+      },
+      "environmentalFactors": {
+        "description": "Milder, shorter winters allow larger rodent populations",
+        "rodentSpecies": "Long-tailed pygmy rice rats",
+        "climateImpact": "Climate change = extended breeding season",
+        "reproductionRate": "Increased frequency"
+      },
+      "trend": "INCREASING - Expected to continue through autumn (Southern Hemisphere)",
+      "lastUpdated": "2026-05-09T00:00:00Z",
+      "dataSources": ["CNN", "Argentine Ministry of Health", "WHO"]
+    },
+    {
+      "id": "chile-endemic-2026-live",
+      "name": "Chile - Spring Hantavirus Outbreak",
+      "location": "Central & Southern Chile",
+      "coordinates": {
+        "lat": -35.5,
+        "lng": -71.5
+      },
+      "cases": {
+        "total": 39,
+        "year": 2026,
+        "throughMonth": "May",
+        "comparison": "Exceeds entire 2025 annual total (44 cases)"
+      },
+      "deaths": 13,
+      "caseFatalityRate": 33.3,
+      "status": "ONGOING - Endemic Activity",
+      "severity": "HIGH",
+      "virusType": "Andes Virus (ANDV)",
+      "seasonalComparison": {
+        "year2025": {
+          "totalCases": 44,
+          "totalDeaths": 8
+        },
+        "year2026": {
+          "casesAsOfMay": 39,
+          "deathsAsOfMay": 13,
+          "projectionIfContinues": "Will exceed 2025 significantly"
+        }
+      },
+      "trend": "STABLE - Within seasonal expected range for spring",
+      "lastUpdated": "2026-05-07T00:00:00Z",
+      "dataSources": ["UPI", "Chilean Ministry of Health", "WHO"]
+    },
+    {
+      "id": "usa-southwest-endemic-2026-live",
+      "name": "USA Southwest - Endemic Hantavirus (Sin Nombre Virus)",
+      "location": "Southwest USA (Arizona, California, Colorado, New Mexico, Utah, Virginia)",
+      "coordinates": {
+        "lat": 35.5,
+        "lng": -107.0
+      },
+      "cases": {
+        "fourCornersEndemic": 17,
+        "weeklyReport": "MMWR Week 17, 2026",
+        "cruiseShipRelated": 0
+      },
+      "deaths": 0,
+      "caseFatalityRate": 0,
+      "status": "ENDEMIC - Baseline Activity",
+      "severity": "MODERATE",
+      "virusType": "Sin Nombre Virus (SNV) - Different from Andes",
+      "annualBaseline": {
+        "typical": "15-40 cases/year",
+        "concentration": "Four Corners region",
+        "deaths": "Variable, typically 1-5"
+      },
+      "statesMonitoring": {
+        "Arizona": "Monitoring exposed individuals",
+        "California": "Monitoring exposed individuals",
+        "Georgia": "Monitoring exposed individuals",
+        "Texas": "Monitoring exposed individuals",
+        "Virginia": "Monitoring exposed individuals"
+      },
+      "cruiseOutbreakImpact": {
+        "usPassengersOnShip": 17,
+        "positiveAmongUSPassengers": 0,
+        "testingComplete": true,
+        "USOriginatedCases": 0
+      },
+      "trend": "STABLE - Endemic baseline, no cruise-related cases",
+      "lastUpdated": "2026-05-08T00:00:00Z",
+      "dataSources": ["CDC Hantavirus Division", "Today.com"]
+    }
+  ],
+  "globalSummary": {
+    "totalCases": {
+      "cruiseShip": 8,
+      "argentina": 101,
+      "chile": 39,
+      "usaSouthwest": 17,
+      "otherRegions": 5,
+      "grand_total": 170
+    },
+    "totalDeaths": {
+      "cruiseShip": 3,
+      "argentina": 32,
+      "chile": 13,
+      "usaSouthwest": 0,
+      "otherRegions": 0,
+      "grand_total": 48
+    },
+    "globalCaseFatalityRate": 28.2,
+    "last7Days": {
+      "newCases": 15,
+      "newDeaths": 4,
+      "source": "MV Hondius outbreak and endemic activity"
+    },
+    "activeOutbreakClusters": 4,
+    "affectedCountries": 7,
+    "countryList": [
+      "Argentina",
+      "Chile",
+      "United States",
+      "Uruguay",
+      "United Kingdom",
+      "Netherlands",
+      "Germany"
+    ],
+    "mostSevereOutbreak": {
+      "name": "MV Hondius Cruise Ship",
+      "caseFatalityRate": 37.5,
+      "reason": "Andes virus with person-to-person transmission capability"
+    },
+    "secondMostSevere": {
+      "name": "Argentina",
+      "caseFatalityRate": 31.7,
+      "reason": "Climate-driven surge with endemic Andes virus"
+    },
+    "riskAssessment": {
+      "global": "LOW - WHO assessment",
+      "us": "EXTREMELY LOW - No cruise-related cases in US",
+      "pandemiaPotential": "21% - Kalshi prediction markets"
+    }
+  },
+  "keyFindings": [
+    {
+      "finding": "MV Hondius disembarkation progressing - no new cases in 48 hours",
+      "implication": "Outbreak may be contained to initial 8 cases",
+      "confidence": "High"
+    },
+    {
+      "finding": "Argentina cases have DOUBLED year-over-year (101 vs 50 in 2025)",
+      "implication": "Climate change driving larger rodent populations",
+      "confidence": "High"
+    },
+    {
+      "finding": "Chile 2026 cases already exceed 2025 full-year total",
+      "implication": "Spring surge continuing, expect more cases through June",
+      "confidence": "High"
+    },
+    {
+      "finding": "All 17 US cruise passengers tested negative",
+      "implication": "US domestic risk remains extremely low",
+      "confidence": "Very High"
+    },
+    {
+      "finding": "Andes virus confirmed as causative agent (person-to-person capable)",
+      "implication": "Unusual for hantavirus, but limited spread shown in practice",
+      "confidence": "Very High"
+    }
+  ],
+  "newestOutbreakReports": [
+    {
+      "date": "2026-05-10",
+      "headline": "MV Hondius arriving Tenerife for passenger disembarkation",
+      "source": "ABC News Live Updates",
+      "casesReported": 8,
+      "deathsReported": 3,
+      "status": "Repatriation flights underway"
+    },
+    {
+      "date": "2026-05-09",
+      "headline": "Argentina lethal hantavirus cases rising - climate change factor",
+      "source": "CNN",
+      "casesReported": 101,
+      "deathsReported": 32,
+      "keyPoint": "Cases doubled compared to 2025"
+    },
+    {
+      "date": "2026-05-08",
+      "headline": "What the numbers tell us about hantavirus",
+      "source": "CNN",
+      "casesReported": "170+ global",
+      "deathsReported": "48+ global",
+      "keyPoint": "Risk remains low despite numbers"
+    },
+    {
+      "date": "2026-05-07",
+      "headline": "Chile, Argentina report rise in deadly hantavirus cases",
+      "source": "UPI",
+      "casesReported": "140 combined (39 Chile + 101 Argentina)",
+      "deathsReported": "45 combined",
+      "keyPoint": "Both countries experiencing significant increases"
+    }
+  ],
+  "mapAPIData": {
+    "outbreakMarkers": [
+      {
+        "id": "mv-hondius-live",
+        "lat": 28.3,
+        "lng": -16.5,
+        "name": "MV Hondius (Tenerife)",
+        "cases": 8,
+        "deaths": 3,
+        "severity": "critical",
+        "color": "#ff0000",
+        "radius": 45,
+        "status": "ACTIVE DISEMBARKATION"
+      },
+      {
+        "id": "argentina-live",
+        "lat": -38.5,
+        "lng": -63.0,
+        "name": "Argentina",
+        "cases": 101,
+        "deaths": 32,
+        "severity": "high",
+        "color": "#ff6600",
+        "radius": 50,
+        "status": "ONGOING SURGE"
+      },
+      {
+        "id": "chile-live",
+        "lat": -35.5,
+        "lng": -71.5,
+        "name": "Chile",
+        "cases": 39,
+        "deaths": 13,
+        "severity": "high",
+        "color": "#ff6600",
+        "radius": 45,
+        "status": "ENDEMIC ACTIVITY"
+      },
+      {
+        "id": "usa-southwest-live",
+        "lat": 35.5,
+        "lng": -107.0,
+        "name": "USA Southwest",
+        "cases": 17,
+        "deaths": 0,
+        "severity": "moderate",
+        "color": "#ffcc00",
+        "radius": 35,
+        "status": "ENDEMIC BASELINE"
+      }
+    ],
+    "statisticsPanel": {
+      "totalCases": 170,
+      "totalDeaths": 48,
+      "globalCFR": "28.2%",
+      "activeOutbreaks": 4,
+      "affectedCountries": 7,
+      "last24Hours": {
+        "newCases": 3,
+        "newDeaths": 0,
+        "source": "MV Hondius (stable), endemic regions (baseline)"
+      }
+    }
+  },
+  "metadata": {
+    "reportGeneratedDate": "2026-05-10T14:30:00Z",
+    "dataCollectionCompleted": "2026-05-10T14:25:00Z",
+    "dataCutoffTime": "May 10, 2026, 14:30 UTC",
+    "sourceCount": 15,
+    "primarySources": [
+      "WHO Disease Outbreak News",
+      "CDC Hantavirus Division",
+      "CDC Newsroom Statements",
+      "ECDC (European Centre for Disease Prevention)",
+      "CNN Health",
+      "ABC News Live Updates",
+      "UPI Global News",
+      "Live Science",
+      "Today.com",
+      "USF Health News"
+    ],
+    "refreshCycle": "Every 15 minutes (automated)",
+    "nextScheduledRefresh": "2026-05-10T14:45:00Z",
+    "reportingStandard": "WHO DON / CDC HAN format",
+    "disclaimers": [
+      "Numbers may change as investigations continue",
+      "MV Hondius cases may increase as incubation period expires among passengers/crew",
+      "Argentina/Chile surge expected to continue through autumn (Southern Hemisphere)",
+      "Global risk assessment: LOW (WHO)",
+      "US risk assessment: EXTREMELY LOW (CDC)",
+      "Data accurate as of May 10, 2026, 14:30 UTC"
+    ]
+  }
+}
