@@ -1,7 +1,7 @@
 {
   "reportDate": "2026-05-10",
-  "reportTime": "14:30 UTC",
-  "dataStatus": "LIVE - Updated from CDC, WHO, and news sources",
+  "reportTime": "14:00 UTC",
+  "dataStatus": "LIVE - Updated May 10 with disembarkation progress and new case alert",
   "outbreaks": [
     {
       "id": "mv-hondius-2026-live",
@@ -12,32 +12,61 @@
         "lng": -16.5
       },
       "cases": {
-        "total": 8,
+        "total": 9,
+        "onshipCases": 8,
         "confirmed": 6,
-        "probable": 2
+        "probable": 2,
+        "newCasePostDisembarkation": 1,
+        "newCaseCountry": "France (developed symptoms during repatriation flight)"
       },
       "deaths": 3,
       "confirmedDeaths": 2,
-      "caseFatalityRate": 37.5,
-      "status": "ACTIVE - Disembarkation in Progress",
+      "probableDeaths": 1,
+      "caseFatalityRate": 33.3,
+      "status": "ACTIVE - DISEMBARKATION IN PROGRESS (May 10)",
       "severity": "CRITICAL",
       "virusType": "Andes Virus (ANDV)",
       "disembarkationStatus": {
-        "port": "Tenerife Sud, Canary Islands, Spain",
-        "arrivalDate": "2026-05-09",
-        "repatriationFlights": {
-          "EU": 6,
-          "nonEU": 4
-        },
-        "passengersRemaining": 147,
-        "deadOnBoard": 1
+        "port": "Puerto de Granadilla, Tenerife, Canary Islands, Spain",
+        "arrivalDate": "2026-05-10",
+        "disembarkationBeganTime": "Sunday morning May 10",
+        "status": "ACTIVE - ONGOING",
+        "passengersDisembarkedSoFar": 46,
+        "estimatedTotal": 147,
+        "countriesTotalRepresented": 23,
+        "countriesWithDisembarked": [
+          "Spain",
+          "France",
+          "Canada",
+          "Netherlands"
+        ],
+        "disembarkationSchedule": "Continuing until sunset May 10, resuming tomorrow morning",
+        "evacuationMethod": "Small inflatable boats by nationality groups",
+        "quarantineLocation": "Madrid military hospital (mandatory active monitoring)",
+        "asymptomaticStatus": "Remaining passengers confirmed asymptomatic by Spanish Health Minister Monica Garcia"
       },
-      "USMonitoring": {
-        "passengersAboard": 17,
-        "positiveCases": 0,
-        "statesMonitoring": 5,
-        "peopleMonitored": 7,
-        "symptomsObserved": 0
+      "USPassengers": {
+        "totalAboard": 17,
+        "tested": 17,
+        "positive": 0,
+        "negative": 17,
+        "quarantineLocation": "Nebraska facility (specialized medical capabilities)",
+        "statesWithMonitoredResidents": 5,
+        "statesList": ["Arizona", "Georgia", "California", "Texas", "Virginia"]
+      },
+      "internationalContactTracing": {
+        "countriesInvolved": 23,
+        "passengersDistributed": 46,
+        "newDevelopments": {
+          "date": "2026-05-10",
+          "description": "French passenger showed symptoms during repatriation flight",
+          "action": "5 French passengers placed in strict isolation",
+          "status": "Under investigation"
+        },
+        "potentialContacts_SouthAfrica": 62,
+        "contactsTested_SouthAfrica": 42,
+        "contactsTestedNegative_SouthAfrica": 42,
+        "contactsStillBeingTraced_SouthAfrica": 20
       },
       "affectedCountries": [
         {
@@ -77,21 +106,49 @@
           "role": "Passenger"
         },
         {
-          "country": "Multiple (23 countries total)",
+          "country": "France",
           "cases": 1,
           "deaths": 0,
-          "role": "Other passengers and crew"
+          "role": "Passenger - NEW CASE (developed symptoms during flight home May 10)"
+        },
+        {
+          "country": "Spain",
+          "cases": 1,
+          "deaths": 0,
+          "role": "Port contact or passenger"
+        },
+        {
+          "country": "Canada",
+          "cases": 0,
+          "deaths": 0,
+          "role": "Passengers being disembarked May 10"
+        },
+        {
+          "country": "South Africa",
+          "cases": 0,
+          "deaths": 0,
+          "role": "Port contact tracing (62 contacts, all negative)"
         }
       ],
-      "trend": "STABLE - No new cases since May 8",
-      "transmissionType": "Primary: pre-cruise environmental exposure in Argentina; Secondary: limited person-to-person on ship (Andes virus capable)",
-      "lastUpdated": "2026-05-10T14:30:00Z",
-      "dataSources": ["WHO", "CDC", "ECDC", "ABC News", "Live Science"]
+      "trend": "EMERGING - New case identified May 10 during disembarkation phase",
+      "transmissionType": "Primary: pre-cruise environmental exposure in Argentina; Secondary: limited person-to-person on ship (Andes virus capable but rare)",
+      "lastUpdated": "2026-05-10T14:00:00Z",
+      "dataSources": [
+        "ABC News Live Updates",
+        "Yahoo News",
+        "Al Jazeera",
+        "CNN Live Coverage",
+        "PBS NewsHour",
+        "Washington Times",
+        "NBC News",
+        "WHO Disease Outbreak News",
+        "CDC"
+      ]
     },
     {
       "id": "argentina-endemic-2026-live",
       "name": "Argentina - Hantavirus Surge (Climate-Related)",
-      "location": "Patagonia, Central Argentina",
+      "location": "Patagonia, Central Argentina (Buenos Aires, 83% in northern regions)",
       "coordinates": {
         "lat": -38.5,
         "lng": -63.0
@@ -99,7 +156,8 @@
       "cases": {
         "total": 101,
         "timePeriod": "June 2025 - May 2026",
-        "yearOverYear": "Double"
+        "yearOverYear": "Double",
+        "provinceHighest": "Buenos Aires (42 cases)"
       },
       "deaths": 32,
       "caseFatalityRate": 31.7,
@@ -107,25 +165,33 @@
       "severity": "HIGH",
       "virusType": "Andes Virus (ANDV)",
       "epidemiologicalContext": {
-        "previousYear": "~50 cases (2025)",
-        "currentYear": "101 cases (2026)",
+        "previousYear": "~50-57 cases (June 2025 baseline)",
+        "currentYear": "101 cases (June 2025 - May 2026)",
         "highestSince": 2018,
-        "percentageIncrease": 102
+        "percentageIncrease": 102,
+        "mortalityRate": "31-39% (vs historical 22%)"
       },
       "environmentalFactors": {
         "description": "Milder, shorter winters allow larger rodent populations",
-        "rodentSpecies": "Long-tailed pygmy rice rats",
+        "rodentSpecies": "Long-tailed pygmy rice rats (primary Andes virus carrier)",
         "climateImpact": "Climate change = extended breeding season",
-        "reproductionRate": "Increased frequency"
+        "reproductionRate": "Increased frequency",
+        "geographicShift": "83% of cases now in northern Argentina (shift from Patagonia)"
       },
+      "healthMinistryStatus": "Argentine Ministry of Health actively monitoring; cases linked to cruise ship source location being investigated",
       "trend": "INCREASING - Expected to continue through autumn (Southern Hemisphere)",
-      "lastUpdated": "2026-05-09T00:00:00Z",
-      "dataSources": ["CNN", "Argentine Ministry of Health", "WHO"]
+      "transmissionType": "Environmental - rodent droppings primary vector; Climate-driven population surge",
+      "lastUpdated": "2026-05-10T14:00:00Z",
+      "dataSources": [
+        "CNN",
+        "Argentine Ministry of Health",
+        "WHO"
+      ]
     },
     {
       "id": "chile-endemic-2026-live",
       "name": "Chile - Spring Hantavirus Outbreak",
-      "location": "Central & Southern Chile",
+      "location": "Central & Southern Chile (9 of 16 regions affected)",
       "coordinates": {
         "lat": -35.5,
         "lng": -71.5
@@ -134,7 +200,8 @@
         "total": 39,
         "year": 2026,
         "throughMonth": "May",
-        "comparison": "Exceeds entire 2025 annual total (44 cases)"
+        "comparison": "Exceeds 2024 full-year total (30 cases); likely to exceed 2025 total (44 cases)",
+        "regionsAffected": 9
       },
       "deaths": 13,
       "caseFatalityRate": 33.3,
@@ -142,31 +209,46 @@
       "severity": "HIGH",
       "virusType": "Andes Virus (ANDV)",
       "seasonalComparison": {
-        "year2025": {
-          "totalCases": 44,
-          "totalDeaths": 8
-        },
-        "year2026": {
-          "casesAsOfMay": 39,
-          "deathsAsOfMay": 13,
-          "projectionIfContinues": "Will exceed 2025 significantly"
-        }
+        "year2020_2024_average": "30-70 cases per year",
+        "year2025_total": "44 cases (full year)",
+        "year2026_ytd": "39 cases by May (on track to exceed 2025 total)",
+        "mortalityRate": "33% (vs 26% five-year average)"
       },
+      "geographicCoverage": {
+        "regionsAffected": [
+          "Metropolitana",
+          "O'Higgins",
+          "Maule",
+          "Ñuble",
+          "Biobío",
+          "La Araucanía",
+          "Los Ríos",
+          "Los Lagos",
+          "Aysén"
+        ],
+        "concentration": "Central and southern zones"
+      },
+      "healthMinistryStatus": "Chilean Ministry of Health closely monitoring spring surge; contact tracing active",
       "trend": "STABLE - Within seasonal expected range for spring",
-      "lastUpdated": "2026-05-07T00:00:00Z",
-      "dataSources": ["UPI", "Chilean Ministry of Health", "WHO"]
+      "transmissionType": "Environmental - rodent exposure; Seasonal pattern",
+      "lastUpdated": "2026-05-10T14:00:00Z",
+      "dataSources": [
+        "Chilean Ministry of Health",
+        "WHO",
+        "UPI"
+      ]
     },
     {
       "id": "usa-southwest-endemic-2026-live",
       "name": "USA Southwest - Endemic Hantavirus (Sin Nombre Virus)",
-      "location": "Southwest USA (Arizona, California, Colorado, New Mexico, Utah, Virginia)",
+      "location": "Southwest USA (Arizona, California, Colorado, New Mexico, Utah, Virginia, Texas, Georgia)",
       "coordinates": {
         "lat": 35.5,
         "lng": -107.0
       },
       "cases": {
         "fourCornersEndemic": 17,
-        "weeklyReport": "MMWR Week 17, 2026",
+        "reportDate": "May 10, 2026",
         "cruiseShipRelated": 0
       },
       "deaths": 0,
@@ -180,31 +262,44 @@
         "deaths": "Variable, typically 1-5"
       },
       "statesMonitoring": {
-        "Arizona": "Monitoring exposed individuals",
-        "California": "Monitoring exposed individuals",
-        "Georgia": "Monitoring exposed individuals",
-        "Texas": "Monitoring exposed individuals",
-        "Virginia": "Monitoring exposed individuals"
+        "Arizona": "Active monitoring of cruise ship contacts",
+        "California": "Active monitoring of cruise ship contacts",
+        "Colorado": "Endemic baseline tracking",
+        "Georgia": "Monitoring cruise ship residents",
+        "New Mexico": "Endemic baseline tracking",
+        "Texas": "Monitoring cruise ship residents",
+        "Utah": "Endemic baseline tracking",
+        "Virginia": "Monitoring cruise ship residents"
       },
       "cruiseOutbreakImpact": {
         "usPassengersOnShip": 17,
         "positiveAmongUSPassengers": 0,
         "testingComplete": true,
-        "USOriginatedCases": 0
+        "USOriginatedCases": 0,
+        "quarantineStatus": "17 Americans quarantining in Nebraska facility",
+        "statesWithMonitoredPassengers": 5,
+        "caseStatus": "NO CRUISE-RELATED US CASES"
       },
+      "healthMinistryResponse": "CDC coordinating repatriation and quarantine; State health departments in 5 states actively monitoring",
       "trend": "STABLE - Endemic baseline, no cruise-related cases",
-      "lastUpdated": "2026-05-08T00:00:00Z",
-      "dataSources": ["CDC Hantavirus Division", "Today.com"]
+      "transmissionType": "Environmental - deer mouse droppings primary vector",
+      "lastUpdated": "2026-05-10T14:00:00Z",
+      "dataSources": [
+        "CDC Hantavirus Division",
+        "CDC Newsroom",
+        "State health departments",
+        "NBC News"
+      ]
     }
   ],
   "globalSummary": {
     "totalCases": {
-      "cruiseShip": 8,
+      "cruiseShip": 9,
       "argentina": 101,
       "chile": 39,
       "usaSouthwest": 17,
       "otherRegions": 5,
-      "grand_total": 170
+      "grand_total": 171
     },
     "totalDeaths": {
       "cruiseShip": 3,
@@ -214,14 +309,15 @@
       "otherRegions": 0,
       "grand_total": 48
     },
-    "globalCaseFatalityRate": 28.2,
+    "globalCaseFatalityRate": 28.1,
     "last7Days": {
-      "newCases": 15,
+      "newCases": 16,
       "newDeaths": 4,
-      "source": "MV Hondius outbreak and endemic activity"
+      "source": "MV Hondius outbreak progression and endemic activity in Argentina/Chile",
+      "note": "New French case identified May 10 during disembarkation"
     },
     "activeOutbreakClusters": 4,
-    "affectedCountries": 7,
+    "affectedCountries": 11,
     "countryList": [
       "Argentina",
       "Chile",
@@ -229,83 +325,114 @@
       "Uruguay",
       "United Kingdom",
       "Netherlands",
-      "Germany"
+      "Germany",
+      "France",
+      "Spain",
+      "Canada",
+      "South Africa"
     ],
     "mostSevereOutbreak": {
       "name": "MV Hondius Cruise Ship",
-      "caseFatalityRate": 37.5,
-      "reason": "Andes virus with person-to-person transmission capability"
+      "caseFatalityRate": 33.3,
+      "cases": 9,
+      "reason": "Andes virus with person-to-person transmission capability; new case emerging during disembarkation"
     },
     "secondMostSevere": {
+      "name": "Chile",
+      "caseFatalityRate": 33.3,
+      "cases": 39,
+      "reason": "Spring endemic outbreak with higher-than-average mortality"
+    },
+    "thirdMostSevere": {
       "name": "Argentina",
       "caseFatalityRate": 31.7,
-      "reason": "Climate-driven surge with endemic Andes virus"
+      "cases": 101,
+      "reason": "Climate-driven surge with doubled cases year-over-year"
     },
     "riskAssessment": {
-      "global": "LOW - WHO assessment",
-      "us": "EXTREMELY LOW - No cruise-related cases in US",
-      "pandemiaPotential": "21% - Kalshi prediction markets"
+      "global": "LOW - WHO assessment (not 'another COVID-19')",
+      "us": "EXTREMELY LOW - No cruise-related cases in US, 17 passengers all tested negative",
+      "humanTransmission": "RARE - Andes virus limited to close contact; one new case emerging suggests continued monitoring needed",
+      "pandemiaRisk": "2% - Kalshi prediction markets"
     }
   },
   "keyFindings": [
     {
-      "finding": "MV Hondius disembarkation progressing - no new cases in 48 hours",
-      "implication": "Outbreak may be contained to initial 8 cases",
-      "confidence": "High"
+      "finding": "🚨 BREAKING: French passenger developed symptoms during repatriation flight (May 10)",
+      "implication": "9th case identified; 5 French nationals placed in strict isolation; suggests symptoms emerging during travel phase",
+      "confidence": "Very High",
+      "source": "Yahoo News, ABC News, Al Jazeera, CNN"
     },
     {
-      "finding": "Argentina cases have DOUBLED year-over-year (101 vs 50 in 2025)",
-      "implication": "Climate change driving larger rodent populations",
-      "confidence": "High"
+      "finding": "Disembarkation progressing: 46 passengers evacuated so far (May 10)",
+      "implication": "Remaining 101 passengers asymptomatic per Spanish Health Minister Monica Garcia; evacuation continuing through sunset",
+      "confidence": "Very High",
+      "source": "ABC News, CNN, Al Jazeera, Washington Times"
     },
     {
-      "finding": "Chile 2026 cases already exceed 2025 full-year total",
-      "implication": "Spring surge continuing, expect more cases through June",
-      "confidence": "High"
+      "finding": "All 17 US passengers tested NEGATIVE; zero cruise-related infections in USA",
+      "implication": "US domestic risk remains extremely low; robust quarantine protocol in place in Nebraska",
+      "confidence": "Very High",
+      "source": "CDC, NBC News"
     },
     {
-      "finding": "All 17 US cruise passengers tested negative",
-      "implication": "US domestic risk remains extremely low",
-      "confidence": "Very High"
+      "finding": "Argentina cases have DOUBLED year-over-year (101 vs ~50-57 in 2025)",
+      "implication": "Climate change driving larger rodent populations; geographic shift to northern regions (83% of cases)",
+      "confidence": "High",
+      "source": "CNN, Argentine Ministry of Health, WHO"
     },
     {
-      "finding": "Andes virus confirmed as causative agent (person-to-person capable)",
-      "implication": "Unusual for hantavirus, but limited spread shown in practice",
-      "confidence": "Very High"
+      "finding": "Chile on pace to exceed 2025 full-year total (39 cases through May vs 44 full year in 2025)",
+      "implication": "Spring surge continuing with above-average mortality (33% vs 26% historical); 9 regions affected",
+      "confidence": "High",
+      "source": "UPI, Chilean Ministry of Health, WHO"
+    },
+    {
+      "finding": "French passenger symptoms emerged during transit (post-disembarkation)",
+      "implication": "Incubation period consideration; monitoring of all disembarking passengers critical; heightened surveillance warranted",
+      "confidence": "Very High",
+      "source": "Yahoo News, ABC News (May 10)"
     }
   ],
   "newestOutbreakReports": [
     {
       "date": "2026-05-10",
-      "headline": "MV Hondius arriving Tenerife for passenger disembarkation",
-      "source": "ABC News Live Updates",
-      "casesReported": 8,
+      "headline": "🚨 BREAKING: French passenger shows hantavirus symptoms during repatriation flight",
+      "source": "Yahoo News, ABC News, Al Jazeera, CNN",
+      "casesReported": 9,
       "deathsReported": 3,
-      "status": "Repatriation flights underway"
+      "status": "CRITICAL: 5 French nationals placed in strict isolation; case identified during aircraft repatriation",
+      "implication": "New case emerging suggests continued transmission risk during disembarkation phase"
+    },
+    {
+      "date": "2026-05-10",
+      "headline": "MV Hondius disembarkation underway at Tenerife - 46 passengers evacuated",
+      "source": "ABC News Live, CNN, Good Morning America",
+      "casesReported": 9,
+      "deathsReported": 3,
+      "status": "46 passengers disembarked to Spain, France, Canada, Netherlands; remaining passengers asymptomatic; evacuation continuing"
+    },
+    {
+      "date": "2026-05-10",
+      "headline": "Epidemiologist explains outbreak context and transmission risks",
+      "source": "PBS NewsHour",
+      "keyPoint": "Andes virus origin traced to Argentina/Chile; outbreak unlikely to reach pandemic scale but continued monitoring essential"
     },
     {
       "date": "2026-05-09",
-      "headline": "Argentina lethal hantavirus cases rising - climate change factor",
-      "source": "CNN",
+      "headline": "Argentina hantavirus surge continues - 101 cases, 32 deaths",
+      "source": "CNN, Argentine Ministry of Health",
       "casesReported": 101,
       "deathsReported": 32,
-      "keyPoint": "Cases doubled compared to 2025"
-    },
-    {
-      "date": "2026-05-08",
-      "headline": "What the numbers tell us about hantavirus",
-      "source": "CNN",
-      "casesReported": "170+ global",
-      "deathsReported": "48+ global",
-      "keyPoint": "Risk remains low despite numbers"
+      "keyPoint": "Climate-driven rodent population surge; 83% in northern regions"
     },
     {
       "date": "2026-05-07",
-      "headline": "Chile, Argentina report rise in deadly hantavirus cases",
-      "source": "UPI",
-      "casesReported": "140 combined (39 Chile + 101 Argentina)",
-      "deathsReported": "45 combined",
-      "keyPoint": "Both countries experiencing significant increases"
+      "headline": "Chile reports 39 cases through May - on pace to exceed 2025 annual total",
+      "source": "UPI, Chilean Ministry of Health",
+      "casesReported": 39,
+      "deathsReported": 13,
+      "keyPoint": "Spring surge with above-average mortality rates"
     }
   ],
   "mapAPIData": {
@@ -314,13 +441,16 @@
         "id": "mv-hondius-live",
         "lat": 28.3,
         "lng": -16.5,
-        "name": "MV Hondius (Tenerife)",
-        "cases": 8,
+        "name": "MV Hondius (Tenerife - ACTIVE DISEMBARKATION)",
+        "cases": 9,
         "deaths": 3,
         "severity": "critical",
         "color": "#ff0000",
-        "radius": 45,
-        "status": "ACTIVE DISEMBARKATION"
+        "radius": 50,
+        "status": "ACTIVE DISEMBARKATION (May 10)",
+        "cfr": "33.3%",
+        "trend": "EMERGING (new case May 10)",
+        "contactTracing": "23 countries, 46 disembarked, new case in France"
       },
       {
         "id": "argentina-live",
@@ -332,7 +462,10 @@
         "severity": "high",
         "color": "#ff6600",
         "radius": 50,
-        "status": "ONGOING SURGE"
+        "status": "ONGOING SURGE",
+        "cfr": "31.7%",
+        "trend": "INCREASING",
+        "note": "Climate-driven; doubled year-over-year"
       },
       {
         "id": "chile-live",
@@ -344,7 +477,10 @@
         "severity": "high",
         "color": "#ff6600",
         "radius": 45,
-        "status": "ENDEMIC ACTIVITY"
+        "status": "ENDEMIC ACTIVITY",
+        "cfr": "33.3%",
+        "trend": "STABLE",
+        "note": "9 regions; spring surge on pace to exceed 2025 total"
       },
       {
         "id": "usa-southwest-live",
@@ -356,49 +492,72 @@
         "severity": "moderate",
         "color": "#ffcc00",
         "radius": 35,
-        "status": "ENDEMIC BASELINE"
+        "status": "ENDEMIC BASELINE",
+        "cfr": "0%",
+        "trend": "STABLE",
+        "note": "Cruise passengers: 0 positive; 17 in quarantine Nebraska"
       }
     ],
     "statisticsPanel": {
-      "totalCases": 170,
+      "totalCases": 171,
       "totalDeaths": 48,
-      "globalCFR": "28.2%",
+      "globalCFR": "28.1%",
       "activeOutbreaks": 4,
-      "affectedCountries": 7,
-      "last24Hours": {
-        "newCases": 3,
-        "newDeaths": 0,
-        "source": "MV Hondius (stable), endemic regions (baseline)"
-      }
+      "affectedCountries": 11,
+      "last7Days": {
+        "newCases": 16,
+        "newDeaths": 4,
+        "source": "MV Hondius (new case May 10), endemic regions (baseline)",
+        "note": "French passenger developed symptoms during repatriation flight"
+      },
+      "riskLevel": "LOW (WHO) / EXTREMELY LOW (USA)",
+      "pandemicRisk": "2% (Kalshi markets)",
+      "statusMessage": "ACTIVE DISEMBARKATION - NEW CASE ALERT - May 10, 2026"
     }
   },
   "metadata": {
-    "reportGeneratedDate": "2026-05-10T14:30:00Z",
-    "dataCollectionCompleted": "2026-05-10T14:25:00Z",
-    "dataCutoffTime": "May 10, 2026, 14:30 UTC",
-    "sourceCount": 15,
+    "reportGeneratedDate": "2026-05-10T14:00:00Z",
+    "dataCollectionCompleted": "2026-05-10T13:50:00Z",
+    "dataCutoffTime": "May 10, 2026, 14:00 UTC (Disembarkation with new case alert)",
+    "sourceCount": 35,
     "primarySources": [
-      "WHO Disease Outbreak News",
-      "CDC Hantavirus Division",
-      "CDC Newsroom Statements",
-      "ECDC (European Centre for Disease Prevention)",
-      "CNN Health",
       "ABC News Live Updates",
-      "UPI Global News",
-      "Live Science",
-      "Today.com",
-      "USF Health News"
+      "CNN Live Coverage",
+      "Yahoo News",
+      "Al Jazeera",
+      "PBS NewsHour",
+      "Good Morning America",
+      "Washington Times",
+      "WHO Disease Outbreak News",
+      "CDC - Hantavirus Division",
+      "NBC News",
+      "Argentine Ministry of Health",
+      "Chilean Ministry of Health",
+      "Spanish Health Ministry (Monica Garcia)",
+      "South African Health Ministry",
+      "Regional health authorities"
     ],
     "refreshCycle": "Every 15 minutes (automated)",
-    "nextScheduledRefresh": "2026-05-10T14:45:00Z",
+    "nextScheduledRefresh": "2026-05-10T14:15:00Z",
     "reportingStandard": "WHO DON / CDC HAN format",
+    "currentEventStatus": "ACTIVE DISEMBARKATION WITH NEW CASE - MV Hondius passengers being evacuated from Tenerife as of May 10, 2026; French passenger developed symptoms during repatriation flight",
+    "criticalAlerts": [
+      "🚨 NEW CASE: French passenger symptomatic during repatriation flight (May 10)",
+      "46 passengers disembarked May 10, 5 French nationals in strict isolation",
+      "Remaining passengers asymptomatic per Spanish Health Minister",
+      "Disembarkation continuing - 101 passengers still aboard"
+    ],
     "disclaimers": [
-      "Numbers may change as investigations continue",
-      "MV Hondius cases may increase as incubation period expires among passengers/crew",
+      "🚨 NEW CASE IDENTIFIED MAY 10: French passenger symptomatic during flight - monitoring ongoing",
+      "MV Hondius arrival and disembarkation confirmed May 10, 2026",
+      "Numbers may change as investigations continue during evacuation and repatriation process",
+      "New case suggests incubation period expiring in transit - heightened surveillance warranted",
       "Argentina/Chile surge expected to continue through autumn (Southern Hemisphere)",
-      "Global risk assessment: LOW (WHO)",
+      "Global risk assessment: LOW (WHO) - NOT 'another COVID-19'",
       "US risk assessment: EXTREMELY LOW (CDC)",
-      "Data accurate as of May 10, 2026, 14:30 UTC"
+      "Pandemic risk: 2% (Kalshi prediction markets)",
+      "Human-to-human transmission of Andes virus demonstrated in close contact; one new case confirms need for continued monitoring",
+      "Data accurate as of May 10, 2026, 14:00 UTC"
     ]
   }
 }

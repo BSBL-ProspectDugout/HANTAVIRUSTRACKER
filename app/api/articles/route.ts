@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 import { getRecentArticles, getArticlesByCategory } from '@/lib/article-publisher';
 
 /**
@@ -10,11 +10,10 @@ import { getRecentArticles, getArticlesByCategory } from '@/lib/article-publishe
  *   - category: filter by category (optional)
  */
 
-export async function GET(request: Request) {
+export async function GET(request: NextRequest) {
   try {
-    const { searchParams } = new URL(request.url);
-    const limit = Math.min(parseInt(searchParams.get('limit') || '10'), 50);
-    const category = searchParams.get('category');
+    const limit = Math.min(parseInt(request.nextUrl.searchParams.get('limit') || '10'), 50);
+    const category = request.nextUrl.searchParams.get('category');
 
     let articles;
 
